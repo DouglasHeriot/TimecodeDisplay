@@ -87,7 +87,7 @@
     [result setMM:newMM];
     [result setSS:newSS];
     [result setFF:newFF];
-    return [result autorelease];
+    return result;
 }
 
 // +timecodeWithFramerate:hh:mm:ss:ff:bits:
@@ -102,7 +102,7 @@
     [result setSS:newSS];
     [result setFF:newFF];
     [result setBits:newBits];
-    return [result autorelease];
+    return result;
 }
 
 // +timecodeWithFramerate:newStringRep
@@ -114,7 +114,7 @@
     F53Timecode *result = [F53Timecode new];
     [result setFramerate:newFramerate];
     [result setStringRepresentation:newStringRep];
-    return [result autorelease];
+    return result;
 }
 
 // +framerateWithFPS:videoSpeed:dropFrame:

@@ -43,14 +43,6 @@
     return self;
 }
 
-- (void) dealloc
-{
-    [_midiReceiver release];
-    _midiReceiver = nil;
-    
-    [super dealloc];
-}
-
 - (void) applicationDidFinishLaunching: (NSNotification *) aNotification
 {
     _midiReceiver.online = YES;
@@ -81,7 +73,7 @@
 - (void) windowDidResize: (NSNotification *) notification
 {
     NSAttributedString *as = [_timecodeDisplay attributedStringValue];
-    NSAttributedString *newAS = [[[NSAttributedString alloc] initWithString:@"00:00:00:00" attributes:[as attributesAtIndex:0 effectiveRange:NULL]] autorelease];
+    NSAttributedString *newAS = [[NSAttributedString alloc] initWithString:@"00:00:00:00" attributes:[as attributesAtIndex:0 effectiveRange:NULL]];
     NSSize stringSize = [newAS size];
     NSSize boundsSize = _displayWindow.frame.size;
     boundsSize.width -= 10;

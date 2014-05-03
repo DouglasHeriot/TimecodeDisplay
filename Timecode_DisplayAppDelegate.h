@@ -30,14 +30,14 @@
 
 @interface Timecode_DisplayAppDelegate : NSObject <NSApplicationDelegate>
 {
-    NSWindow *_displayWindow;
-    NSTextField *_timecodeDisplay;
+    NSWindow *__weak _displayWindow;
+    NSTextField *__weak _timecodeDisplay;
     MIDIReceiver *_midiReceiver;
     float _fontSize;
 }
 
-@property (assign) IBOutlet NSWindow *displayWindow;
-@property (assign) IBOutlet NSTextField *timecodeDisplay;
+@property (weak) IBOutlet NSWindow *displayWindow;
+@property (weak) IBOutlet NSTextField *timecodeDisplay;
 
 - (void) setTimecodeString: (NSString *) newString;
 - (void) setFramerateString: (NSString *) newString;

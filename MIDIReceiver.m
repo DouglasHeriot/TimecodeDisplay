@@ -86,15 +86,6 @@
     return self;
 }
 
-- (void) dealloc
-{
-    [_portInputStream release];
-    _portInputStream = nil;
-    
-    [super dealloc];
-}
-
-
 - (void) takeMIDIMessages: (NSArray *) messages
 {
     if (!_online) return;
